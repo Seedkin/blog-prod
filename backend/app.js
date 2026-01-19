@@ -14,10 +14,10 @@ app.use(express.json());
 
 app.use("/api", routes);
 
-app.use(express.static(path.resolve("..", "frontend", "dist")));
+app.use(express.static(path.join(__dirname, "../frontend/dist")));
 
 app.use((req, res) => {
-  res.sendFile(path.resolve("..", "frontend", "dist", "index.html"));
+ res.sendFile(path.join(__dirname, "../frontend/dist/index.html"));
 });
 
 mongoose
